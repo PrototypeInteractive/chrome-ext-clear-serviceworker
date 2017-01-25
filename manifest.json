@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Clear Service Worker",
+  "description": "This extension easily unregisters Service Worker for the loaded page",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "browsingData"
+  ]
+}
