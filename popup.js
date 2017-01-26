@@ -27,10 +27,9 @@ function renderStatus(statusText) {
 
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(url) {
-    // Put the image URL in Google search.
     renderStatus('Clearing All Service Workers Attached To ' + url);
     var callback = function () {
-        renderStatus('Cleared And Reloading...');
+        renderStatus('Cleared And Reloading...' + url);
         chrome.tabs.getSelected(null, function(tab) {
           var code = 'window.location.reload();';
           chrome.tabs.executeScript(tab.id, {code: code});
@@ -44,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }, {
         "serviceWorkers" : true
       }, callback);
-    /*navigator.serviceWorker.getRegistrations().then(function(registrations) {
-     for(let registration of registrations) {
-      renderStatus(registration.scope);
-    } });*/
+      /*navigator.serviceWorker.getRegistrations().then(function(registrations) {
+       for(let registration of registrations) {
+       registrations.forEach(function(v) { console.log('service worker: ' + v); alert('s'); });
+      } });*/
   });
 });
