@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Clear Service Worker",
-  "description": "This extension easily unregisters Service Worker for the loaded page",
+  "description": "This extension easily un registers all the Service Workers loaded in chrome browser",
   "version": "1.0",
 
   "browser_action": {
@@ -11,7 +11,9 @@
   },
   "icons": {
     "16": "icon16.png",
-    "48": "icon48.png",
+    "24": "icon24.png",
+    "32": "icon32.png",
+    "64": "icon64.png",
     "128": "icon128.png"
   },
   "permissions": [
